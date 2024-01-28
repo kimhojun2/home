@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
+from django.http import HttpResponse
 # Create your views here.
 
 def login(request):
@@ -21,3 +22,8 @@ def login(request):
 def logout(request):
     auth_logout(request)
     return redirect('articles:index')
+
+
+
+def home(request):
+    return HttpResponse('Home 화면')
